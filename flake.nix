@@ -39,6 +39,7 @@
         };
 
         nativeBuildInputs = [ pkgs.autoPatchelfHook pkgs.makeWrapper ];
+        buildInputs = [ pkgs.stdenv.cc.cc.lib ];
 
         unpackPhase = ''
           mkdir source
