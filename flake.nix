@@ -12,7 +12,10 @@
   {
     packages = forAllSystems (system:
       let
-        pkgs = import nixpkgs { inherit system; };
+        pkgs = import nixpkgs {
+          inherit system;
+          config = { allowUnfree = true; }; # Is this the best solution?
+        };
 
         # Map Nix system to Cursor Agent's OS/ARCH naming
         osArch = {
